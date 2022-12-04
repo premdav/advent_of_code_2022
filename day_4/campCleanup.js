@@ -3,7 +3,7 @@
 const fs = require('fs');
 const lines = fs.readFileSync('input.txt', 'utf-8').split(/\r?\n/);
 let pairsWithOverlap = 0;
-for (line of lines) {
+for (const line of lines) {
     const firstPair = line.split(',')[0].split('-'), secondPair = line.split(',')[1].split('-');
     if ((parseInt(secondPair[0], 10) <= parseInt(firstPair[0], 10)) && (parseInt(firstPair[0], 10) <= parseInt(secondPair[1], 10))) {
         pairsWithOverlap += 1;

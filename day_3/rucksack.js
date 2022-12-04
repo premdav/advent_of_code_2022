@@ -16,7 +16,7 @@ const itemTypes = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 let prioritySum = 0;
 const lines = fs.readFileSync('input.txt', 'utf-8').split(/\r?\n/);
 for (let i = 0; i < lines.length; i += 3) {
-    for (item of lines[i]) {
+    for (const item of lines[i]) {
         if (lines[i+1].includes(item) && lines[i+2].includes(item)) {
             prioritySum += (itemTypes.indexOf(item) + 1);
             break;
