@@ -14,8 +14,7 @@ const fs = require('fs');
 
 const itemTypes = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 let prioritySum = 0;
-const allLines = fs.readFileSync('input.txt', 'utf-8');
-const lines = allLines.split(/\r?\n/);
+const lines = fs.readFileSync('input.txt', 'utf-8').split(/\r?\n/);
 for (let i = 0; i < lines.length; i += 3) {
     for (item of lines[i]) {
         if (lines[i+1].includes(item) && lines[i+2].includes(item)) {
