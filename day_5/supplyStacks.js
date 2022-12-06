@@ -24,14 +24,17 @@ for (const line of lines) {
         const amountToMove = parseInt(line.split('move ')[1].split(' from')[0], 10);
         const moveFrom = parseInt(line.split('from ')[1].split(' to')[0], 10) - 1;
         const moveTo = parseInt(line.split('to ')[1], 10) - 1;
+        const moveStack = [];
         for (let i = 0; i < amountToMove; i += 1) {
             const moveMe = stacks[moveFrom].shift();
-            stacks[moveTo].unshift(moveMe);
+            moveStack.unshift(moveMe);
         }
+        stacks[moveTo].unshift(...moveStack.reverse());
     }
 }
 
 for (let i = 0; i < totalStacks; i += 1) result += stacks[i][0];
+console.log(result);
 
 ////////////////////////////////////////////////////////////////////////////////
 ///// printing results to paste into answer on website                     /////
