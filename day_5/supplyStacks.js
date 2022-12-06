@@ -1,5 +1,3 @@
-// elves in pairs - each assigned a range of sections for cleaning camp -> 2-3, 5-8
-// in how many assignment pairs have overlap?
 const fs = require('fs');
 const lines = fs.readFileSync('input.txt', 'utf-8').split(/\r?\n/);
 
