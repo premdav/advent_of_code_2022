@@ -5,9 +5,9 @@ const dataStream = [];
 let packetMarker = 0;
 
 for (let i = 0; i < input.length; i += 1) {
-    if (dataStream.length === 4) {
+    if (dataStream.length === 14) {
         const dataSet = new Set(dataStream);
-        if (dataSet.size === 4) {
+        if (dataSet.size === 14) {
             packetMarker = i;
             break;
         }
